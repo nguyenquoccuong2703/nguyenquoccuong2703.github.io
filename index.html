@@ -21,7 +21,7 @@
   body { background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
   a { color: inherit; }
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
-  h1, h2, h3 { font-family: "Space Grotesk", sans-serif; line-height: 1.15; }
+  h1, h2, h3, h4 { font-family: "Space Grotesk", sans-serif; line-height: 1.2; }
 
   nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; gap: 12px; }
   nav .logo { font-family: "Space Grotesk"; font-weight: 700; font-size: 20px; }
@@ -29,68 +29,59 @@
   nav a { text-decoration: none; color: var(--muted); }
   nav a:hover { color: var(--accent); }
 
-  .hero { padding: 56px 0 48px; }
+  .hero { padding: 48px 0 40px; }
   .tag { display: inline-block; background: var(--accent-soft); color: var(--accent);
          font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 99px; margin-bottom: 20px; }
-  .hero h1 { font-size: clamp(36px, 7vw, 62px); margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(34px, 7vw, 60px); margin-bottom: 18px; }
   .hero h1 span { color: var(--accent); }
   .hero p { font-size: 18px; color: var(--muted); max-width: 660px; }
-  .cta { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+  .cta { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
   .btn { padding: 12px 22px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 15px; }
   .btn.primary { background: var(--accent); color: #fff; }
   .btn.ghost { border: 1px solid var(--line); }
   .btn:hover { opacity: .88; }
 
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; padding-bottom: 56px; }
-  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
-  .stat b { display: block; font-family: "Space Grotesk"; font-size: 32px; color: var(--accent); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; padding-bottom: 48px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .stat b { display: block; font-family: "Space Grotesk"; font-size: 30px; color: var(--accent); }
   .stat span { color: var(--muted); font-size: 14px; }
 
-  section { padding: 56px 0; border-top: 1px solid var(--line); }
-  section > h2 { font-size: 28px; margin-bottom: 8px; }
-  section > .sub { color: var(--muted); margin-bottom: 28px; }
+  section { padding: 52px 0; border-top: 1px solid var(--line); }
+  section > h2 { font-size: 28px; margin-bottom: 6px; }
+  section > .sub { color: var(--muted); margin-bottom: 26px; }
 
-  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
-  .card .thumb { aspect-ratio: 16/8; background: var(--accent-soft); display: grid; place-items: center; text-align: center; padding: 12px;
-                 font-family: "Space Grotesk"; font-size: 26px; font-weight: 700; color: var(--accent); }
-  .card .body { padding: 20px; }
-  .card h3 { font-size: 20px; margin-bottom: 4px; }
-  .card .meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
-  .card ul { padding-left: 18px; font-size: 14px; }
-  .card li { margin-bottom: 4px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-  .chip { font-size: 12px; border: 1px solid var(--line); border-radius: 99px; padding: 2px 10px; color: var(--muted); }
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .skill { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .skill h3 { font-size: 16px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .skill h3::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 13px; border: 1px solid var(--line); border-radius: 99px; padding: 3px 11px; color: var(--muted); background: var(--bg); }
 
-  .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 36px; }
-  .game { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
-  .game h4 { font-family: "Space Grotesk"; font-size: 16px; margin-bottom: 2px; }
-  .game .role { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
-  .game .nums { display: flex; gap: 18px; }
-  .game .nums b { display: block; font-family: "Space Grotesk"; font-size: 20px; color: var(--accent); }
+  .company { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px; margin-bottom: 20px; }
+  .company-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin-bottom: 4px; }
+  .company-head h3 { font-size: 22px; }
+  .company-head .when { color: var(--muted); font-size: 14px; }
+  .company .role { color: var(--accent); font-weight: 600; margin-bottom: 14px; }
+  .company > ul { padding-left: 18px; color: var(--muted); font-size: 15px; }
+  .company > ul li { margin-bottom: 4px; }
+  .games-label { margin: 20px 0 10px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .game { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: var(--bg); }
+  .game h4 { font-size: 15px; margin-bottom: 8px; }
+  .game .nums { display: flex; gap: 16px; flex-wrap: wrap; }
+  .game .nums b { display: block; font-family: "Space Grotesk"; font-size: 18px; color: var(--accent); }
   .game .nums span { font-size: 12px; color: var(--muted); }
-
-  .timeline { list-style: none; }
-  .timeline > li { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 24px 0; border-bottom: 1px dashed var(--line); }
-  .timeline .when { color: var(--muted); font-size: 14px; }
-  .timeline h3 { font-size: 18px; }
-  .timeline .co { color: var(--accent); font-weight: 600; font-size: 15px; margin: 2px 0 8px; }
-  .timeline ul { padding-left: 18px; color: var(--muted); font-size: 15px; }
-  .timeline ul li { margin-bottom: 4px; }
-  @media (max-width: 640px) { .timeline > li { grid-template-columns: 1fr; gap: 4px; } }
-
-  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-  .skills div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
-  .skills h3 { font-size: 16px; margin-bottom: 8px; }
-  .skills p { color: var(--muted); font-size: 14px; }
+  .game p { font-size: 13px; color: var(--muted); }
 
   .edu { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .edu h3 { font-size: 18px; }
   .edu span { color: var(--muted); font-size: 14px; }
 
-  footer { padding: 56px 0 72px; border-top: 1px solid var(--line); text-align: center; }
-  footer h2 { font-size: 32px; margin-bottom: 12px; }
-  footer p { color: var(--muted); margin-bottom: 24px; }
+  footer { padding: 52px 0 72px; border-top: 1px solid var(--line); text-align: center; }
+  footer h2 { font-size: 30px; margin-bottom: 12px; }
+  footer p { color: var(--muted); margin-bottom: 22px; }
   footer small { display: block; margin-top: 40px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 600px) { .company { padding: 20px; } }
 </style>
 </head>
 <body>
@@ -99,9 +90,8 @@
   <nav>
     <div class="logo">Cường.</div>
     <ul>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -111,7 +101,7 @@
     <h1>Hi, I'm <span>Nguyễn Quốc Cường</span>.</h1>
     <p>Product Owner / Game Designer with 2+ years building casual and puzzle mobile games, from concept to launch and optimization. I write PRDs, run backlogs and sprints, and use retention, funnel and A/B test data to guide product and monetization decisions.</p>
     <div class="cta">
-      <a class="btn primary" href="#projects">See my work</a>
+      <a class="btn primary" href="#experience">See my work</a>
       <a class="btn ghost" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
       <a class="btn ghost" href="https://www.linkedin.com/in/c%C6%B0%E1%BB%9Dng-nguy%E1%BB%85n-qu%E1%BB%91c-6aa9aa269/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
@@ -120,126 +110,89 @@
   <div class="stats">
     <div class="stat"><b>~20M</b><span>downloads across 7 live games managed</span></div>
     <div class="stat"><b>40→46%</b><span>D1 retention lift via level optimization</span></div>
-    <div class="stat"><b>1,000+</b><span>game levels designed &amp; balanced in Unity</span></div>
+    <div class="stat"><b>1,000+</b><span>game levels designed &amp; balanced</span></div>
     <div class="stat"><b>5</b><span>titles shipped as Game Designer / PO</span></div>
   </div>
-
-  <section id="projects">
-    <h2>Selected projects</h2>
-    <p class="sub">Live-ops, IP collaborations and games I owned end-to-end.</p>
-    <div class="projects">
-
-      <article class="card">
-        <div class="thumb">Live portfolio<br>7 games · ~20M</div>
-        <div class="body">
-          <h3>Woodber, Arrow 3D &amp; more</h3>
-          <div class="meta">LIHUHU · Project Manager / Producer</div>
-          <ul>
-            <li>Track and update performance of 7 live casual games daily</li>
-            <li>SQL on Firebase → BigQuery to find drivers of D3/D7 retention</li>
-            <li>Tune ad frequency &amp; first-ad timing by segment via Remote Config, with A/B test proposals</li>
-          </ul>
-          <div class="chips"><span class="chip">Live-ops</span><span class="chip">BigQuery</span><span class="chip">Ads</span><span class="chip">A/B test</span></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="thumb">Concept → Launch</div>
-        <div class="body">
-          <h3>End-to-end casual puzzle game</h3>
-          <div class="meta">Playza · Product Owner / Game Designer</div>
-          <ul>
-            <li>Owned core gameplay, levels and features from concept to launch</li>
-            <li>PRDs with clear acceptance criteria; AI tools to iterate faster</li>
-            <li>Mascot-collection meta-progression to lift long-term retention</li>
-          </ul>
-          <div class="chips"><span class="chip">PRD</span><span class="chip">Unity prototype</span><span class="chip">Meta-progression</span></div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="games">
-      <div class="game"><h4>Car Match</h4><div class="role">GD / PO</div>
-        <div class="nums"><div><b>200K</b><span>downloads</span></div><div><b>46% / 8%</b><span>R1 / R7</span></div></div></div>
-      <div class="game"><h4>Brainrot Merge Drop</h4><div class="role">GD / PO</div>
-        <div class="nums"><div><b>75K</b><span>downloads</span></div></div></div>
-      <div class="game"><h4>Woody Jam</h4><div class="role">GD / PO</div>
-        <div class="nums"><div><b>10K</b><span>downloads</span></div><div><b>35% / 17%</b><span>R1 / R7</span></div></div></div>
-      <div class="game"><h4>Pin Jam</h4><div class="role">GD / PO</div>
-        <div class="nums"><div><b>10K</b><span>downloads</span></div><div><b>40% / 17%</b><span>R1 / R7</span></div></div></div>
-      <div class="game"><h4>Wood Nut Screw Pin Jam</h4><div class="role">GD / PO</div>
-        <div class="nums"><div><b>10K</b><span>downloads</span></div></div></div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <p class="sub">From level designer to producer.</p>
-    <ul class="timeline">
-      <li>
-        <div class="when">07/2026 — Present</div>
-        <div>
-          <h3>Project Manager / Producer</h3>
-          <div class="co">LIHUHU PTE. LTD.</div>
-          <ul>
-            <li>Manage 7 live casual games in parallel (~20M downloads), tracking performance daily</li>
-            <li>Turn player pain points found in data into new feature requirements</li>
-            <li>Lead a new casual puzzle title with a 12-person team (Dev, QA, GD, Art) on a 10-week roadmap</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">02/2026 — 07/2026</div>
-        <div>
-          <h3>Product Owner / Game Designer</h3>
-          <div class="co">Playza</div>
-          <ul>
-            <li>Owned a casual puzzle game end-to-end, from concept to launch</li>
-            <li>Ran sprint planning and coordinated Dev, Art and QA to ship on schedule</li>
-            <li>Used retention and level data to fix difficulty and economy drop-offs</li>
-            <li>Validated ideas with playable Unity prototypes before full development</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">08/2024 — 11/2025</div>
-        <div>
-          <h3>Product Owner / Game Designer</h3>
-          <div class="co">Maplelabs</div>
-          <ul>
-            <li>Drove D1 retention from 40% to 46% by prioritizing level testing and optimization</li>
-            <li>Defined IAP and ad placement strategy, and balanced the game economy</li>
-            <li>Ran A/B tests and used funnel data to drive product decisions</li>
-            <li>Designed and balanced 1,000+ levels in Unity</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">04/2024 — 08/2024</div>
-        <div>
-          <h3>Game Designer (Intern)</h3>
-          <div class="co">Rainbow5s</div>
-          <ul>
-            <li>Supported mechanics, level design and UX for casual mobile games</li>
-            <li>Ran playtests before and after updates; wrote design documentation</li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <p class="sub">Product thinking backed by data.</p>
     <div class="skills">
-      <div><h3>Product</h3><p>PRD writing, backlog &amp; sprint planning, user/UI flow, cross-team coordination.</p></div>
-      <div><h3>Monetization</h3><p>IAP &amp; ads placement design, game economy balancing.</p></div>
-      <div><h3>Data</h3><p>Retention &amp; funnel analysis, A/B testing, SQL, BigQuery, Firebase Remote Config, Python.</p></div>
-      <div><h3>Game design</h3><p>Core loop, level design, systems design, meta-progression.</p></div>
-      <div><h3>Prototyping</h3><p>Unity, level editor, rapid prototyping, playtesting.</p></div>
-      <div><h3>AI &amp; language</h3><p>AI-assisted design, documentation and analysis. English (professional working).</p></div>
+      <div class="skill"><h3>Product</h3><div class="chips">
+        <span class="chip">PRD writing</span><span class="chip">Backlog &amp; sprint planning</span><span class="chip">User &amp; UI flow</span><span class="chip">Cross-team coordination</span></div></div>
+      <div class="skill"><h3>Monetization</h3><div class="chips">
+        <span class="chip">IAP placement</span><span class="chip">Ads placement</span><span class="chip">Ad frequency tuning</span><span class="chip">Economy balancing</span></div></div>
+      <div class="skill"><h3>Data</h3><div class="chips">
+        <span class="chip">Retention &amp; funnel</span><span class="chip">A/B testing</span><span class="chip">SQL</span><span class="chip">BigQuery</span><span class="chip">Firebase Remote Config</span><span class="chip">Python</span></div></div>
+      <div class="skill"><h3>Game design</h3><div class="chips">
+        <span class="chip">Core loop</span><span class="chip">Level design</span><span class="chip">Systems design</span><span class="chip">Meta-progression</span></div></div>
+      <div class="skill"><h3>Prototyping</h3><div class="chips">
+        <span class="chip">Unity</span><span class="chip">Level editor</span><span class="chip">Rapid prototyping</span><span class="chip">Playtesting</span></div></div>
+      <div class="skill"><h3>AI &amp; language</h3><div class="chips">
+        <span class="chip">AI-assisted design &amp; analysis</span><span class="chip">English (professional)</span></div></div>
     </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="sub">Each company and the games I worked on there.</p>
+
+    <article class="company">
+      <div class="company-head"><h3>LIHUHU PTE. LTD.</h3><span class="when">07/2026 — Present</span></div>
+      <div class="role">Project Manager / Producer</div>
+      <ul>
+        <li>Manage 7 live casual games in parallel (~20M downloads), tracking performance daily</li>
+        <li>SQL on Firebase → BigQuery to find drivers of D3 and D7 retention</li>
+        <li>Tune ad frequency and first-ad timing by segment via Remote Config, with A/B test proposals</li>
+        <li>Lead a new casual puzzle title with a 12-person team (Dev, QA, GD, Art) on a 10-week roadmap</li>
+      </ul>
+      <div class="games-label">Games</div>
+      <div class="games">
+        <div class="game"><h4>Woodber — Classic Number Game</h4><p>Live-ops, retention &amp; ads analysis</p></div>
+        <div class="game"><h4>Arrow 3D</h4><p>Live-ops &amp; performance tracking</p></div>
+        <div class="game"><h4>+ 5 more live titles</h4><p>Portfolio of ~20M downloads</p></div>
+      </div>
+    </article>
+
+    <article class="company">
+      <div class="company-head"><h3>Playza</h3><span class="when">02/2026 — 07/2026</span></div>
+      <div class="role">Product Owner / Game Designer</div>
+      <ul>
+        <li>Owned a casual puzzle game end-to-end, from concept to launch</li>
+        <li>Wrote PRDs with clear acceptance criteria; used AI tools to iterate faster</li>
+        <li>Ran sprint planning and coordinated Dev, Art and QA to ship on schedule</li>
+        <li>Fixed difficulty and economy drop-offs using retention and level data</li>
+        <li>Validated ideas with playable Unity prototypes; designed a mascot-collection meta-progression</li>
+      </ul>
+    </article>
+
+    <article class="company">
+      <div class="company-head"><h3>Maplelabs</h3><span class="when">08/2024 — 11/2025</span></div>
+      <div class="role">Product Owner / Game Designer</div>
+      <ul>
+        <li>Drove D1 retention from 40% to 46% by prioritizing level testing and optimization</li>
+        <li>Defined IAP and ad placement strategy, and balanced the game economy</li>
+        <li>Ran A/B tests and used funnel data to drive product decisions</li>
+        <li>Designed and balanced 1,000+ levels in Unity</li>
+      </ul>
+      <div class="games-label">Games</div>
+      <div class="games">
+        <div class="game"><h4>Car Match</h4><div class="nums"><div><b>200K</b><span>downloads</span></div><div><b>46% / 8%</b><span>R1 / R7</span></div></div></div>
+        <div class="game"><h4>Brainrot Merge Drop</h4><div class="nums"><div><b>75K</b><span>downloads</span></div></div></div>
+        <div class="game"><h4>Woody Jam</h4><div class="nums"><div><b>10K</b><span>downloads</span></div><div><b>35% / 17%</b><span>R1 / R7</span></div></div></div>
+        <div class="game"><h4>Pin Jam</h4><div class="nums"><div><b>10K</b><span>downloads</span></div><div><b>40% / 17%</b><span>R1 / R7</span></div></div></div>
+        <div class="game"><h4>Wood Nut Screw Pin Jam</h4><div class="nums"><div><b>10K</b><span>downloads</span></div></div></div>
+      </div>
+    </article>
+
+    <article class="company">
+      <div class="company-head"><h3>Rainbow5s</h3><span class="when">04/2024 — 08/2024</span></div>
+      <div class="role">Game Designer (Intern)</div>
+      <ul>
+        <li>Supported mechanics, level design and UX for casual mobile games</li>
+        <li>Ran playtests before and after updates; wrote design documentation</li>
+      </ul>
+    </article>
   </section>
 
   <section>
