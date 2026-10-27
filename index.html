@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cường Nguyễn — Game Producer</title>
+<meta name="description" content="Cường (Fate) Nguyễn — Project Manager / Producer for mobile puzzle & hypercasual games.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0; --surface: #ffffff; --text: #1a1a1a; --muted: #6b6b6b;
+    --line: #e5e1d8; --accent: #e8572a; --accent-soft: #fde9e1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121212; --surface: #1c1c1c; --text: #f1efe9; --muted: #a3a09a;
+            --line: #2c2c2c; --accent: #ff7a4d; --accent-soft: #3a2219; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3 { font-family: "Space Grotesk", sans-serif; line-height: 1.15; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+  nav .logo { font-family: "Space Grotesk"; font-weight: 700; font-size: 20px; }
+  nav ul { display: flex; gap: 20px; list-style: none; font-size: 14px; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a:hover { color: var(--accent); }
+
+  .hero { padding: 64px 0 56px; }
+  .tag { display: inline-block; background: var(--accent-soft); color: var(--accent);
+         font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 99px; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(36px, 7vw, 64px); margin-bottom: 20px; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 620px; }
+  .cta { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+  .btn { padding: 12px 22px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 15px; }
+  .btn.primary { background: var(--accent); color: #fff; }
+  .btn.ghost { border: 1px solid var(--line); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; padding-bottom: 64px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .stat b { display: block; font-family: "Space Grotesk"; font-size: 34px; color: var(--accent); }
+  .stat span { color: var(--muted); font-size: 14px; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section > h2 { font-size: 28px; margin-bottom: 28px; }
+
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .card .thumb { aspect-ratio: 16/9; background: var(--accent-soft); display: grid; place-items: center;
+                 font-family: "Space Grotesk"; font-size: 28px; font-weight: 700; color: var(--accent); }
+  .card .body { padding: 20px; }
+  .card h3 { font-size: 20px; margin-bottom: 4px; }
+  .card .meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .card ul { padding-left: 18px; font-size: 14px; }
+  .card li { margin-bottom: 4px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .chip { font-size: 12px; border: 1px solid var(--line); border-radius: 99px; padding: 2px 10px; color: var(--muted); }
+
+  .timeline { list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px dashed var(--line); }
+  .timeline .when { color: var(--muted); font-size: 14px; }
+  .timeline h3 { font-size: 18px; }
+  .timeline p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  @media (max-width: 600px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } nav ul { gap: 12px; } }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .skills div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .skills h3 { font-size: 16px; margin-bottom: 8px; }
+  .skills p { color: var(--muted); font-size: 14px; }
+
+  footer { padding: 56px 0 72px; border-top: 1px solid var(--line); text-align: center; }
+  footer h2 { font-size: 32px; margin-bottom: 12px; }
+  footer p { color: var(--muted); margin-bottom: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="logo">Fate.</div>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="tag">Project Manager / Producer · Mobile Games</div>
+    <h1>Hi, I'm Cường <span>“Fate”</span> Nguyễn.</h1>
+    <p>I run live mobile games — puzzle and hypercasual — from roadmap to daily performance. Game designer turned producer, I connect design intuition with data to grow retention and revenue.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See my work</a>
+      <!-- TODO: thay link CV -->
+      <a class="btn ghost" href="cv.pdf">Download CV</a>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b>7</b><span>live games managed in parallel</span></div>
+    <div class="stat"><b>~20M</b><span>total downloads across portfolio</span></div>
+    <div class="stat"><b>2+ yrs</b><span>game design in puzzle games</span></div>
+    <!-- TODO: thay bằng một con số nổi bật, ví dụ: +X% D1 retention -->
+    <div class="stat"><b>+X%</b><span>your best metric win</span></div>
+  </div>
+
+  <section id="projects">
+    <h2>Selected projects</h2>
+    <div class="projects">
+
+      <article class="card">
+        <!-- TODO: thay bằng <img src="images/woodber.png" alt="Woodber"> -->
+        <div class="thumb">Woodber</div>
+        <div class="body">
+          <h3>Woodber — Classic Number Game</h3>
+          <div class="meta">LIHUHU · Hypercasual puzzle · Producer</div>
+          <ul>
+            <li>Owned live-ops roadmap and daily performance tracking</li>
+            <li>Analyzed retention &amp; churn via Firebase + BigQuery to drive updates</li>
+            <li><!-- TODO --> Result: [metric before → after]</li>
+          </ul>
+          <div class="chips"><span class="chip">Live-ops</span><span class="chip">Retention</span><span class="chip">BigQuery</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">Arrow 3D</div>
+        <div class="body">
+          <h3>Arrow 3D</h3>
+          <div class="meta">LIHUHU · Puzzle · Producer</div>
+          <ul>
+            <li><!-- TODO --> What you did</li>
+            <li><!-- TODO --> Result with numbers</li>
+          </ul>
+          <div class="chips"><span class="chip">Puzzle</span><span class="chip">Analytics</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">Project 3</div>
+        <div class="body">
+          <h3><!-- TODO --> Game name</h3>
+          <div class="meta">Company · Genre · Role</div>
+          <ul>
+            <li>Problem / goal</li>
+            <li>What you did</li>
+            <li>Result with numbers</li>
+          </ul>
+          <div class="chips"><span class="chip">Tag</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul class="timeline">
+      <li>
+        <div class="when">07/2026 — Now</div>
+        <div>
+          <h3>Project Manager / Producer · LIHUHU PTE. LTD.</h3>
+          <p>Product/Growth team. Manage a portfolio of 7 live games (~20M downloads), tracking performance daily and coordinating design, dev, art and UA.</p>
+        </div>
+      </li>
+      <li>
+        <div class="when">02/2026 — 07/2026</div>
+        <div>
+          <!-- TODO: điền chức danh ở Playza -->
+          <h3>[Role] · Playza</h3>
+          <p>[What you owned and achieved]</p>
+        </div>
+      </li>
+      <li>
+        <div class="when">[Year] — [Year]</div>
+        <div>
+          <h3>Game Designer · [Company]</h3>
+          <p>~2 years designing puzzle games: core loops, level design, economy and feature specs.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What I bring</h2>
+    <div class="skills">
+      <div><h3>Live-ops &amp; production</h3><p>Roadmaps, sprint planning, multi-game portfolio management.</p></div>
+      <div><h3>Data-driven growth</h3><p>Firebase Analytics, BigQuery, retention &amp; monetization analysis.</p></div>
+      <div><h3>Game design</h3><p>Puzzle mechanics, level design, feature specs grounded in player behavior.</p></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Let's build something fun.</h2>
+    <p>Open to conversations about producing mobile games.</p>
+    <div class="cta" style="justify-content:center">
+      <!-- TODO: thay email và LinkedIn -->
+      <a class="btn primary" href="mailto:you@email.com">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
