@@ -1,0 +1,10 @@
+{
+  "_how_to_use": "Upload files for the Level Design page into this folder (knowledge/level-design). They appear on knowledge-level-design.html automatically. Optionally add an entry below for a nicer title, description and date.",
+  "files": {
+    "example-file-name.pdf": {
+      "title": "Readable title shown on the page",
+      "description": "One line about what this file covers.",
+      "date": "2026-10"
+    }
+  }
+}

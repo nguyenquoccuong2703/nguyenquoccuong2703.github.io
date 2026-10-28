@@ -154,3 +154,16 @@
   .games .game { display: inline-flex; align-items: center; gap: 12px; }
   .games .game img { width: 36px; height: 36px; border-radius: 9px; flex: none; }
   .games td { vertical-align: middle; }
+
+  /* Knowledge tabs */
+  .ktabs { display: flex; gap: 4px; overflow-x: auto; border-bottom: 1px solid var(--line); margin-bottom: 32px; scrollbar-width: none; }
+  .ktabs a { flex: none; padding: 12px 16px; text-decoration: none; color: var(--muted); font-weight: 500; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+  .ktabs a:hover { color: var(--ink); }
+  .ktabs a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  .kcards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .kcard { display: block; text-decoration: none; padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+  .kcard:hover { border-color: var(--accent); }
+  .kcard h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .kcard p { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+  .kcount { font-size: 14px; font-weight: 600; color: var(--accent); }
+  @media (max-width: 640px) { .kcards { grid-template-columns: 1fr; } }
