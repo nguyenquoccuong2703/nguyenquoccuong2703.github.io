@@ -67,6 +67,9 @@
   .games-label { margin: 20px 0 10px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
   .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
   .game { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: var(--bg); }
+  a.game { display: block; text-decoration: none; transition: border-color .15s; }
+  a.game:hover { border-color: var(--accent); }
+  .game .store { display: block; margin-top: 10px; font-size: 12px; color: var(--accent); font-weight: 600; }
   .game h4 { font-size: 15px; margin-bottom: 8px; }
   .game .nums { display: flex; gap: 16px; flex-wrap: wrap; }
   .game .nums b { display: block; font-family: "Space Grotesk"; font-size: 18px; color: var(--accent); }
@@ -167,7 +170,7 @@
     </article>
 
     <article class="company">
-      <div class="company-head"><h3>Maplelabs</h3><span class="when">08/2024 — 11/2025</span></div>
+      <div class="company-head"><h3>Maple Labs</h3><span class="when">08/2024 — 11/2025</span></div>
       <div class="role">Product Owner / Game Designer</div>
       <ul>
         <li>Drove D1 retention from 40% to 46% by prioritizing level testing and optimization</li>
@@ -177,11 +180,14 @@
       </ul>
       <div class="games-label">Games</div>
       <div class="games">
-        <div class="game"><h4>Car Match</h4><div class="nums"><div><b>200K</b><span>downloads</span></div><div><b>46% / 8%</b><span>R1 / R7</span></div></div></div>
-        <div class="game"><h4>Brainrot Merge Drop</h4><div class="nums"><div><b>75K</b><span>downloads</span></div></div></div>
-        <div class="game"><h4>Woody Jam</h4><div class="nums"><div><b>10K</b><span>downloads</span></div><div><b>35% / 17%</b><span>R1 / R7</span></div></div></div>
-        <div class="game"><h4>Pin Jam</h4><div class="nums"><div><b>10K</b><span>downloads</span></div><div><b>40% / 17%</b><span>R1 / R7</span></div></div></div>
-        <div class="game"><h4>Wood Nut Screw Pin Jam</h4><div class="nums"><div><b>10K</b><span>downloads</span></div></div></div>
+        <a class="game" href="https://play.google.com/store/apps/details?id=car.jam.traffic.puzzle.match.parking.escape" target="_blank" rel="noopener"><h4>Car Sort! (Car Match)</h4><div class="nums"><div><b>200K</b><span>downloads</span></div><div><b>46% / 8%</b><span>R1 / R7</span></div></div><span class="store">View on store →</span></a>
+        <a class="game" href="https://play.google.com/store/apps/details?id=italian.brainrot.merge.drop.funny.meme.puzzle" target="_blank" rel="noopener"><h4>Meme Merge Drop (Brainrot)</h4><div class="nums"><div><b>75K</b><span>downloads</span></div></div><span class="store">View on store →</span></a>
+        <a class="game" href="https://play.google.com/store/apps/details?id=wood.color.slide.block.puzzle.escape" target="_blank" rel="noopener"><h4>Woody Jam: Sort Color Puzzle</h4><div class="nums"><div><b>10K</b><span>downloads</span></div><div><b>35% / 17%</b><span>R1 / R7</span></div></div><span class="store">View on store →</span></a>
+        <a class="game" href="https://play.google.com/store/apps/details?id=leogame.unscrew.pin.jam" target="_blank" rel="noopener"><h4>Screw Pin Jam Puzzle</h4><div class="nums"><div><b>10K</b><span>downloads</span></div><div><b>40% / 17%</b><span>R1 / R7</span></div></div><span class="store">View on store →</span></a>
+        <a class="game" href="https://play.google.com/store/apps/details?id=leogame.screw.puzzle" target="_blank" rel="noopener"><h4>Unscrew Wood Nut &amp; Bolt</h4><div class="nums"><div><b>50K+</b><span>downloads</span></div></div><span class="store">View on store →</span></a>
+        <a class="game" href="https://play.google.com/store/apps/details?id=wool.sort.out.block.jam.puzzle" target="_blank" rel="noopener"><h4>Block Knit: Color Wool Sort</h4><div class="nums"><div><b>10K+</b><span>downloads</span></div></div><span class="store">View on store →</span></a>
+        <a class="game" href="https://play.google.com/store/apps/details?id=leogame.hexa.sort" target="_blank" rel="noopener"><h4>Hexa Stack: Color Hexagon Sort</h4><div class="nums"><div><b>1K+</b><span>downloads</span></div></div><span class="store">View on store →</span></a>
+        <a class="game" href="https://apps.apple.com/us/app/car-escape-traffic-jam-puzzle/id6738465207" target="_blank" rel="noopener"><h4>Car Escape: Traffic Jam Puzzle</h4><div class="nums"><div><b>iOS</b><span>App Store</span></div></div><span class="store">View on store →</span></a>
       </div>
     </article>
 
