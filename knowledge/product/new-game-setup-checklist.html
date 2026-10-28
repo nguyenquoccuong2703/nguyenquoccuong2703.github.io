@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical setup checklist for a new mobile game — Nguyễn Quốc Cường</title>
+<meta name="description" content="Accounts, tools and permissions to prepare when a new game project starts.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Technical setup checklist for a new mobile game">
+<meta property="og:description" content="Accounts, tools and permissions to prepare when a new game project starts.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="me" href="../../index.html">Nguyễn Quốc Cường</a>
+    <nav aria-label="Pages">
+      <a href="../../index.html#skills">Skills</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../knowledge.html" aria-current="page">Knowledge</a>
+      <a href="../../index.html#contact">Contact</a>
+      <a class="cv" href="../../cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="ktabs" aria-label="Knowledge topics">
+      <a href="../../knowledge.html">Overview</a>
+      <a href="../../knowledge-ad-monetization.html">Ad Monetization</a>
+      <a href="../../knowledge-product.html" aria-current="page">Product</a>
+      <a href="../../knowledge-game-design.html">Game Design</a>
+      <a href="../../knowledge-level-design.html">Level Design</a>
+      <a href="../../knowledge-user-acquisition.html">User Acquisition</a>
+  </nav>
+  <article class="prose">
+    <a class="back" href="../../knowledge-product.html">Back to Product</a>
+    <h1>Technical setup checklist for a new mobile game</h1>
+    <p class="lede2">Accounts, tools and permissions to prepare when a new game project starts.</p>
+
+<p>Setting up a new game touches many tools and many people. A shared checklist with a clear owner for each step avoids missed keys, wrong permissions and last-minute surprises before launch.</p>
+
+<h2>1. Game identity</h2>
+<ul>
+  <li>Decide which developer account will publish the game.</li>
+  <li>Choose the bundle ID or package name carefully. It cannot change after the first release.</li>
+  <li>Give the game an internal code and one central profile where every key and ID is stored.</li>
+</ul>
+
+<h2>2. Team workspace</h2>
+<ul>
+  <li>Documentation space from the company template.</li>
+  <li>Task tracker project from a standard template so workflows match across games.</li>
+  <li>Shared storage for art and builds with a standard folder structure.</li>
+  <li>Code repository with branch protection.</li>
+</ul>
+
+<h2>3. Store and analytics</h2>
+<ul>
+  <li>Firebase apps for Android and iOS, linked to Google Analytics and BigQuery export from day one.</li>
+  <li>Crash reporting turned on at the same time.</li>
+  <li>Google Play Console and App Store Connect apps, with permissions by role (release for product, store and feedback for UA).</li>
+  <li>Link the store to analytics once the game is live.</li>
+  <li>Facebook app ID for the SDK. It is separate from the ads account.</li>
+</ul>
+
+<h2>4. Attribution and monetization</h2>
+<ul>
+  <li>MMP app created and permissions granted.</li>
+  <li>Mediation SDK key and ad unit IDs for all three formats (banner, interstitial, rewarded), checked before handing over to dev.</li>
+  <li>Other network app IDs as needed.</li>
+</ul>
+
+<h2>5. Dashboards and support</h2>
+<ul>
+  <li>Cost and revenue dashboards connected after release.</li>
+  <li>Admin and customer support tools with project access.</li>
+</ul>
+
+<h2>Make it a habit</h2>
+<p>For every row, write down who is accountable, who does it, and what the output is. Reviewing the checklist at kickoff and again before soft launch catches most setup problems while they are still cheap to fix.</p>
+
+  </article>
+  <footer>
+    <div class="small"><span>Ho Chi Minh City, Vietnam</span><span>© 2026 Nguyễn Quốc Cường</span></div>
+  </footer>
+</main>
+<script src="../../knowledge.js"></script>
+</body>
+</html>

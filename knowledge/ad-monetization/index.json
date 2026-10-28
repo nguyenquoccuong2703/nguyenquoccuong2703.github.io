@@ -5,6 +5,16 @@
       "title": "Readable title shown on the page",
       "description": "One line about what this file covers.",
       "date": "2026-10"
+    },
+    "value-events-for-roas-bidding.html": {
+      "title": "Milestone and recurring value events for ROAS bidding",
+      "description": "Two ways to send revenue signals to ad networks so value-based campaigns find better users.",
+      "date": "2026-10"
+    },
+    "trial-holdout-ad-tests.html": {
+      "title": "Rolling out a new ad monetization layer with trial and holdout",
+      "description": "How to plug in a new mediation or optimization tool safely and measure its real impact.",
+      "date": "2026-10"
     }
   }
 }

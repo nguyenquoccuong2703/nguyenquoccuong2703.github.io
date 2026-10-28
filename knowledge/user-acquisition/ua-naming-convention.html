@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A naming convention for UA campaigns, ad groups and creatives — Nguyễn Quốc Cường</title>
+<meta name="description" content="One pattern for campaigns, ad groups and creatives so anyone can read a report at a glance.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="A naming convention for UA campaigns, ad groups and creatives">
+<meta property="og:description" content="One pattern for campaigns, ad groups and creatives so anyone can read a report at a glance.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="me" href="../../index.html">Nguyễn Quốc Cường</a>
+    <nav aria-label="Pages">
+      <a href="../../index.html#skills">Skills</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../knowledge.html" aria-current="page">Knowledge</a>
+      <a href="../../index.html#contact">Contact</a>
+      <a class="cv" href="../../cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="ktabs" aria-label="Knowledge topics">
+      <a href="../../knowledge.html">Overview</a>
+      <a href="../../knowledge-ad-monetization.html">Ad Monetization</a>
+      <a href="../../knowledge-product.html">Product</a>
+      <a href="../../knowledge-game-design.html">Game Design</a>
+      <a href="../../knowledge-level-design.html">Level Design</a>
+      <a href="../../knowledge-user-acquisition.html" aria-current="page">User Acquisition</a>
+  </nav>
+  <article class="prose">
+    <a class="back" href="../../knowledge-user-acquisition.html">Back to User Acquisition</a>
+    <h1>A naming convention for UA campaigns, ad groups and creatives</h1>
+    <p class="lede2">One pattern for campaigns, ad groups and creatives so anyone can read a report at a glance.</p>
+
+<p>When several people run campaigns across many games and networks, names are the cheapest form of documentation. A good convention lets anyone read a report and know the game, platform, network, country and goal of each line without opening the campaign.</p>
+
+<h2>Campaign</h2>
+<pre>&lt;Game&gt;_&lt;Platform&gt;_&lt;Network&gt;_&lt;Country&gt;_&lt;Type&gt;_&lt;Name&gt;_&lt;YYMMDD&gt;</pre>
+<ul>
+  <li><strong>Game</strong>: a short code of about 3 letters.</li>
+  <li><strong>Platform</strong>: <code>A</code> for Android, <code>i</code> for iOS.</li>
+  <li><strong>Network</strong>: a fixed short code per network, for example <code>FB</code>, <code>GG</code>, <code>Uni</code>, <code>Tik</code>.</li>
+  <li><strong>Country</strong>: ISO alpha-2 code, or <code>Global</code>.</li>
+  <li><strong>Type</strong>: the optimization goal, such as <code>CPI</code>, <code>CPA</code>, <code>ROAS</code> or <code>Retention</code>.</li>
+  <li><strong>Name</strong>: the event or idea being tested.</li>
+  <li><strong>Date</strong>: the day the campaign was created.</li>
+</ul>
+<p>Example: <code>ABC_A_GG_US_CPA_Level10_261020</code></p>
+
+<h2>Ad group, ad set or creative pack</h2>
+<pre>&lt;Game&gt;_&lt;Network&gt;_&lt;Country&gt;_&lt;AdType&gt;_&lt;GroupName&gt;</pre>
+<p>Ad type is <code>Ban</code> (banner), <code>Vid</code> (video) or <code>Play</code> (playable). The group name starts with the creative number so packs sort in order, for example <code>ABC_FB_US_Vid_13Gameplay</code>.</p>
+
+<h2>Creative</h2>
+<pre>&lt;Game&gt;_&lt;Language&gt;_&lt;AdType&gt;_&lt;No.&gt;_&lt;CreativeName&gt;</pre>
+<p>Leave the language out for English and add it only for localized versions, for example <code>ABC_JP_Vid_1_Gameplay30s</code>.</p>
+
+<h2>Why it pays off</h2>
+<ul>
+  <li>Reports can be split by any field with a simple text split, no manual tagging.</li>
+  <li>Creative numbers stay the same across networks, so the same idea can be compared everywhere.</li>
+  <li>New team members learn the structure from the names alone.</li>
+</ul>
+
+  </article>
+  <footer>
+    <div class="small"><span>Ho Chi Minh City, Vietnam</span><span>© 2026 Nguyễn Quốc Cường</span></div>
+  </footer>
+</main>
+<script src="../../knowledge.js"></script>
+</body>
+</html>

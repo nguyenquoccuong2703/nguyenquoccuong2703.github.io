@@ -34,7 +34,7 @@
         <li class="doc">
           <span class="type">${esc(d.ext)}</span>
           <div><h2>${esc(d.title)}</h2><p>${[d.desc, d.date, d.size ? size(d.size) : ''].filter(Boolean).map(esc).join(', ')}</p></div>
-          <a class="open-doc" href="${d.path}" target="_blank" rel="noopener">Open file</a>
+          ${d.ext === 'HTML' ? `<a class="open-doc" href="${d.path}">Read article</a>` : `<a class="open-doc" href="${d.path}" target="_blank" rel="noopener">Open file</a>`}
         </li>`).join('');
     });
   }

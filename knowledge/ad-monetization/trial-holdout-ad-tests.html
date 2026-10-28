@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling out a new ad monetization layer with trial and holdout — Nguyễn Quốc Cường</title>
+<meta name="description" content="How to plug in a new mediation or optimization tool safely and measure its real impact.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Rolling out a new ad monetization layer with trial and holdout">
+<meta property="og:description" content="How to plug in a new mediation or optimization tool safely and measure its real impact.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="me" href="../../index.html">Nguyễn Quốc Cường</a>
+    <nav aria-label="Pages">
+      <a href="../../index.html#skills">Skills</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../knowledge.html" aria-current="page">Knowledge</a>
+      <a href="../../index.html#contact">Contact</a>
+      <a class="cv" href="../../cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="ktabs" aria-label="Knowledge topics">
+      <a href="../../knowledge.html">Overview</a>
+      <a href="../../knowledge-ad-monetization.html" aria-current="page">Ad Monetization</a>
+      <a href="../../knowledge-product.html">Product</a>
+      <a href="../../knowledge-game-design.html">Game Design</a>
+      <a href="../../knowledge-level-design.html">Level Design</a>
+      <a href="../../knowledge-user-acquisition.html">User Acquisition</a>
+  </nav>
+  <article class="prose">
+    <a class="back" href="../../knowledge-ad-monetization.html">Back to Ad Monetization</a>
+    <h1>Rolling out a new ad monetization layer with trial and holdout</h1>
+    <p class="lede2">How to plug in a new mediation or optimization tool safely and measure its real impact.</p>
+
+<p>Ad optimization tools and new mediation setups often promise higher ad revenue. The only reliable way to know is to measure them against a control group inside your own game, and to be able to switch back quickly if something goes wrong.</p>
+
+<h2>Put a switch in front of the ad flow</h2>
+<p>Instead of wiring the game directly to one mediation, add a thin layer that decides which ad flow is active based on remote config. The game only asks "which flow is active?" and never needs to know the details of each one.</p>
+<ul>
+  <li>Switch between the current flow and the new one without a new build.</li>
+  <li>Roll out to a small share of users first, then expand.</li>
+  <li>Roll back instantly if revenue, fill rate or stability drops.</li>
+  <li>Reuse the same integration across every game in the portfolio.</li>
+</ul>
+
+<h2>Measure with trial and holdout</h2>
+<ul>
+  <li><strong>Trial</strong>: users who get the new optimization logic.</li>
+  <li><strong>Holdout</strong>: users who keep the current behavior as the baseline.</li>
+</ul>
+<p>Assign users randomly and keep the groups fixed for the whole test. Compare ad revenue per user, ad ARPDAU, impressions per user and retention. A tool that lifts revenue but hurts retention can still lose money over the player's lifetime.</p>
+
+<h2>Checklist before going live</h2>
+<ul>
+  <li>Fallback: if the new flow fails to initialize, the game falls back to the current flow.</li>
+  <li>Tracking: every ad event records which flow and which group the user is in.</li>
+  <li>QA: test each ad format (banner, interstitial, rewarded) in both flows and both groups.</li>
+  <li>Decision rule: agree in advance how long the test runs and what lift counts as a win.</li>
+</ul>
+
+  </article>
+  <footer>
+    <div class="small"><span>Ho Chi Minh City, Vietnam</span><span>© 2026 Nguyễn Quốc Cường</span></div>
+  </footer>
+</main>
+<script src="../../knowledge.js"></script>
+</body>
+</html>

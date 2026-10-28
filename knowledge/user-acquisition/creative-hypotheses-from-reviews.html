@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building creative hypotheses from player reviews and analytics — Nguyễn Quốc Cường</title>
+<meta name="description" content="A repeatable way to turn store reviews and audience data into creative ideas worth testing.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Building creative hypotheses from player reviews and analytics">
+<meta property="og:description" content="A repeatable way to turn store reviews and audience data into creative ideas worth testing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="me" href="../../index.html">Nguyễn Quốc Cường</a>
+    <nav aria-label="Pages">
+      <a href="../../index.html#skills">Skills</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../knowledge.html" aria-current="page">Knowledge</a>
+      <a href="../../index.html#contact">Contact</a>
+      <a class="cv" href="../../cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="ktabs" aria-label="Knowledge topics">
+      <a href="../../knowledge.html">Overview</a>
+      <a href="../../knowledge-ad-monetization.html">Ad Monetization</a>
+      <a href="../../knowledge-product.html">Product</a>
+      <a href="../../knowledge-game-design.html">Game Design</a>
+      <a href="../../knowledge-level-design.html">Level Design</a>
+      <a href="../../knowledge-user-acquisition.html" aria-current="page">User Acquisition</a>
+  </nav>
+  <article class="prose">
+    <a class="back" href="../../knowledge-user-acquisition.html">Back to User Acquisition</a>
+    <h1>Building creative hypotheses from player reviews and analytics</h1>
+    <p class="lede2">A repeatable way to turn store reviews and audience data into creative ideas worth testing.</p>
+
+<p>Most creative ideas start as a hunch. This framework grounds them in what real players say and do, so each new video has a reason to exist and a clear thing it is testing.</p>
+
+<h2>1. Gather two kinds of evidence</h2>
+<ul>
+  <li><strong>Who plays</strong>: age, gender and interest groups from your analytics, with engagement and revenue per user for each group. Note how much of the audience is unknown before drawing conclusions.</li>
+  <li><strong>What they say</strong>: a few months of store reviews from both stores and all languages. Tag each review by theme and star rating.</li>
+</ul>
+
+<h2>2. Turn reviews into personas</h2>
+<p>Group reviewers by motivation, for example players who play to relax, players who want a brain workout, and players who were disappointed because the ad did not match the game. For each persona write down the signals (real quotes), the motivation and what it means for creative.</p>
+
+<h2>3. Separate what players love from what they hate</h2>
+<ul>
+  <li><strong>Love</strong>: list each insight with how many reviews mention it and how many of those are 4 to 5 stars. Rate its strength by volume.</li>
+  <li><strong>Hate</strong>: list each complaint with its type (mechanic, promise, technical, content) and a clear rule for creative: be careful, or never do this.</li>
+</ul>
+
+<h2>4. Write the hypothesis table</h2>
+<table>
+  <thead><tr><th>Column</th><th>What goes in it</th></tr></thead>
+  <tbody>
+    <tr><td>Hypothesis</td><td>One sentence about what will make the ad work.</td></tr>
+    <tr><td>Concept</td><td>The concrete video or playable idea that tests it.</td></tr>
+    <tr><td>Evidence</td><td>The review themes, audience data or past creative results behind it.</td></tr>
+    <tr><td>Promise risk</td><td>How far the ad's promise could drift from the real game, from low to high.</td></tr>
+  </tbody>
+</table>
+<p>Group hypotheses into areas such as the core puzzle, relaxation and progression, matching the real game, and the main audience. That makes it easy to see which areas are covered.</p>
+
+<h2>5. Respect the promise gap</h2>
+<p>Ads that show boards, mechanics or features the game does not have can lower CPI in the short term, but they bring one-star reviews and players who churn on day one. Use a surprising hook in the first seconds if you need it, then cut to real gameplay quickly, and never promise things like "no ads" if the game shows them.</p>
+
+<h2>Case: a number puzzle game, 3 months of data</h2>
+<p>Here is what this process found for one live number puzzle game, using 584 store reviews (64 on the App Store with a 2.84 average, 520 on Google Play with a 4.15 average) and Firebase audience data.</p>
+<table>
+  <thead><tr><th>Finding</th><th>Numbers</th><th>What it means for creative</th></tr></thead>
+  <tbody>
+    <tr><td>Players skew female</td><td>65.2% female. Revenue per user 0.315 for women vs 0.106 for men</td><td>Women are the main audience. Test hand and presenter styles that feel unisex.</td></tr>
+    <tr><td>Players skew older</td><td>35+ is 66.4%, 45+ is 42.1%. Ages 55–64 play 6.28 sessions and earn 0.350 per user, vs 3.73 and 0.146 for ages 18–24</td><td>Slower pacing, large clear numbers and big text.</td></tr>
+    <tr><td>Top reason to love it: brain training</td><td>28 mentions, 23 of them 4–5 stars</td><td>Frame the core mechanic as a logic challenge.</td></tr>
+    <tr><td>Second reason: relaxation</td><td>22 mentions, 15 of them 4–5 stars</td><td>Calm opening, no timers, finish on a cleared board.</td></tr>
+    <tr><td>Top complaint: in-game ads</td><td>143 of 584 reviews (24.5%), and 99 of 133 one-to-two-star reviews (74.4%)</td><td>Never promise "no ads" or show ad-watching in creatives.</td></tr>
+    <tr><td>Ad does not match game</td><td>14 reviews (2.4%), 9 of them one-to-two stars</td><td>Show the real board. Hooks must cut to real gameplay fast.</td></tr>
+    <tr><td>Bugs and crashes</td><td>21 reviews, 16 of them one-to-two stars</td><td>Not a creative problem. Flag to product before scaling spend.</td></tr>
+    <tr><td>Hooks with unusual board effects</td><td>Best ones reached D7 ROAS of 33.8% on Android and 23.7% on iOS, on small samples</td><td>Strong but risky. Keep the hook short and cut to the real board.</td></tr>
+  </tbody>
+</table>
+<p>Note that about 48% of users had unknown age and gender, so audience splits are a direction, not a precise measure.</p>
+
+<h2>6. Keep a quote bank</h2>
+<p>Save strong player quotes by theme. They make great UGC scripts, end cards and moodboard references, and they keep the creative team close to the player's voice.</p>
+
+  </article>
+  <footer>
+    <div class="small"><span>Ho Chi Minh City, Vietnam</span><span>© 2026 Nguyễn Quốc Cường</span></div>
+  </footer>
+</main>
+<script src="../../knowledge.js"></script>
+</body>
+</html>

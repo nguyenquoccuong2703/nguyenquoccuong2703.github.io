@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testing a game theme with ads before you build it — Nguyễn Quốc Cường</title>
+<meta name="description" content="Two ways to compare art themes on Meta, how to set them up and which metric decides the winner.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Testing a game theme with ads before you build it">
+<meta property="og:description" content="Two ways to compare art themes on Meta, how to set them up and which metric decides the winner.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="me" href="../../index.html">Nguyễn Quốc Cường</a>
+    <nav aria-label="Pages">
+      <a href="../../index.html#skills">Skills</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../knowledge.html" aria-current="page">Knowledge</a>
+      <a href="../../index.html#contact">Contact</a>
+      <a class="cv" href="../../cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="ktabs" aria-label="Knowledge topics">
+      <a href="../../knowledge.html">Overview</a>
+      <a href="../../knowledge-ad-monetization.html">Ad Monetization</a>
+      <a href="../../knowledge-product.html">Product</a>
+      <a href="../../knowledge-game-design.html">Game Design</a>
+      <a href="../../knowledge-level-design.html">Level Design</a>
+      <a href="../../knowledge-user-acquisition.html" aria-current="page">User Acquisition</a>
+  </nav>
+  <article class="prose">
+    <a class="back" href="../../knowledge-user-acquisition.html">Back to User Acquisition</a>
+    <h1>Testing a game theme with ads before you build it</h1>
+    <p class="lede2">Two ways to compare art themes on Meta, how to set them up and which metric decides the winner.</p>
+
+<p>Before committing art and dev time to a new game, you can run small ad tests to see which theme people respond to. Pick an existing game with a similar genre and art style to host the test so the signal is as clean as possible.</p>
+
+<h2>Two common methods</h2>
+<table>
+  <thead><tr><th></th><th>With a themed store page</th><th>Without a store page</th></tr></thead>
+  <tbody>
+    <tr><td>Campaign type</td><td>CPI (app installs)</td><td>CPM or link clicks</td></tr>
+    <tr><td>Setup</td><td>One ad set per theme with equal budgets. Each theme's ads lead to a custom store listing that matches it.</td><td>One ad set per theme with equal budgets. Ads only, no store change.</td></tr>
+    <tr><td>Decision metric</td><td>Lowest CPI or highest IPM</td><td>Highest CTR or lowest CPC</td></tr>
+  </tbody>
+</table>
+<p>The store-page method measures the whole funnel up to install, so it is closer to reality. The ad-only method is faster and cheaper and is good for an early cut between many themes.</p>
+
+<h2>Setup checklist</h2>
+<ul>
+  <li>Access to the business manager, ad account, developer account and a page to run ads from.</li>
+  <li>Attribution (MMP) configured for the host app.</li>
+  <li>Creatives in standard sizes: square images and 9:16 vertical video.</li>
+  <li>Campaign objective set to app promotion. A campaign budget of about $30–70 per day is a safe start, and bid strategy set to highest volume.</li>
+  <li>Ad sets with equal budgets, one geo with clean traffic such as the US or UK, and the same schedule.</li>
+  <li>For the store-page method, one custom store listing per theme, linked in each ad.</li>
+</ul>
+
+<h2>Running the test</h2>
+<ul>
+  <li>Budget about $30–50 per day for the test itself, depending on how many creatives you run.</li>
+  <li>Keep the test short, usually 4 to 7 days, and extend only if there is not enough data to decide.</li>
+  <li>Change only the theme between ad sets. Same format, length, copy and targeting.</li>
+  <li>Watch where the network shifts budget. Delivery leaning heavily to one theme is a signal in itself, but confirm it with the decision metric.</li>
+  <li>Treat the winner as a direction for the art team, not a final verdict on the game.</li>
+</ul>
+
+<h2>Results from three real tests</h2>
+<table>
+  <thead><tr><th></th><th>Test A</th><th>Test B</th><th>Test C</th></tr></thead>
+  <tbody>
+    <tr><td>Game type</td><td>Hexa sort puzzle</td><td>Logic puzzle</td><td>Pixel hidden-object puzzle</td></tr>
+    <tr><td>Method</td><td>Themed store page</td><td>Themed store page</td><td>No store page</td></tr>
+    <tr><td>Setup</td><td>Facebook, US, 4 days, 4 video concepts</td><td>Facebook, US, 10 days, 5 banner concepts</td><td>Facebook, US, 4 days, 9 concepts</td></tr>
+    <tr><td>Spend</td><td>~200 SGD</td><td>~476 SGD (~41 SGD/day)</td><td>~$567</td></tr>
+    <tr><td>Winner</td><td>Ladybug theme</td><td>Wood theme</td><td>Jewel theme</td></tr>
+    <tr><td>Winning numbers</td><td>69 installs, CPI 1.89 SGD, CTR 3.21%, unique CTR 4.17%</td><td>Highest CTR, lowest CPC, CPI $1.49</td><td>CTR 5.88%, CPC $0.09, about 11% cheaper than other themes</td></tr>
+  </tbody>
+</table>
+
+<h2>Insights</h2>
+<ul>
+  <li>In every test one theme pulled clearly ahead. The others were not close on CTR, installs or CPI, so a few hundred dollars is enough to make a call.</li>
+  <li>In Test A, Facebook moved most of the budget to the winning theme on its own. Budget allocation is an early signal you can read before the test ends.</li>
+  <li>Familiar, tactile themes (wood, jewels, cute insects) did well for casual puzzle audiences.</li>
+  <li>The no-store method in Test C gave a clear winner on CTR and CPC in just 4 days, which makes it a good first filter before a CPI test.</li>
+</ul>
+
+  </article>
+  <footer>
+    <div class="small"><span>Ho Chi Minh City, Vietnam</span><span>© 2026 Nguyễn Quốc Cường</span></div>
+  </footer>
+</main>
+<script src="../../knowledge.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rewarded and offerwall UA: which events to track — Nguyễn Quốc Cường</title>
+<meta name="description" content="How to design the in-game events that rewarded, offerwall and playtime networks pay on.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Rewarded and offerwall UA: which events to track">
+<meta property="og:description" content="How to design the in-game events that rewarded, offerwall and playtime networks pay on.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="me" href="../../index.html">Nguyễn Quốc Cường</a>
+    <nav aria-label="Pages">
+      <a href="../../index.html#skills">Skills</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../knowledge.html" aria-current="page">Knowledge</a>
+      <a href="../../index.html#contact">Contact</a>
+      <a class="cv" href="../../cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="ktabs" aria-label="Knowledge topics">
+      <a href="../../knowledge.html">Overview</a>
+      <a href="../../knowledge-ad-monetization.html">Ad Monetization</a>
+      <a href="../../knowledge-product.html">Product</a>
+      <a href="../../knowledge-game-design.html">Game Design</a>
+      <a href="../../knowledge-level-design.html">Level Design</a>
+      <a href="../../knowledge-user-acquisition.html" aria-current="page">User Acquisition</a>
+  </nav>
+  <article class="prose">
+    <a class="back" href="../../knowledge-user-acquisition.html">Back to User Acquisition</a>
+    <h1>Rewarded and offerwall UA: which events to track</h1>
+    <p class="lede2">How to design the in-game events that rewarded, offerwall and playtime networks pay on.</p>
+
+<p>Rewarded and offerwall networks pay users to install and play, so they need in-game events to reward and to bill on. The quality of these campaigns depends heavily on picking the right events.</p>
+
+<h2>Events almost every network needs</h2>
+<ul>
+  <li><strong>App opened</strong>, to confirm the user is active.</li>
+  <li><strong>Ad revenue</strong>, for ROAS-based campaigns in ad-monetized games.</li>
+  <li><strong>Purchase</strong>, for games with IAP. Track at least two packs: an entry-level pack and a high-value pack of around $15.</li>
+  <li><strong>Level or stage completed</strong>, as <code>complete_level_X</code> or <code>complete_stage_X</code>.</li>
+</ul>
+
+<h2>Choosing level milestones</h2>
+<p>Networks reward users at checkpoints, so pick levels by how long it takes a typical player to reach them, not by round numbers.</p>
+<ul>
+  <li>Spread milestones from day 1 out to day 30 or beyond, for example around days 1, 3, 7, 14, 21, 30 and later.</li>
+  <li>Mix early, mid and late milestones. A common guide is several events completed within the first week, several in the second week and several after it.</li>
+  <li>The first event should be easy, with a very high completion rate. The final event should be reached by only a small share of users.</li>
+  <li>Some networks also accept repeatable events such as every N ads watched.</li>
+</ul>
+
+<h2>Pricing models you will meet</h2>
+<ul>
+  <li><strong>CPI</strong>: a fixed price per install, often with a minimum by country.</li>
+  <li><strong>CPE</strong>: payment per completed event, which suits multi-reward offers.</li>
+  <li><strong>ROAS-based</strong>: the network optimizes toward revenue, which needs reliable ad revenue and purchase events.</li>
+  <li><strong>Playtime-based</strong>: users are rewarded for minutes played plus milestones.</li>
+</ul>
+
+<h2>Network snapshot</h2>
+<p>What account managers quoted for ad-monetized (IAA) games in 2026. Prices change often, so confirm before planning budget.</p>
+<table>
+  <thead><tr><th>Network</th><th>Model</th><th>Notes</th><th>Strongest geos</th></tr></thead>
+  <tbody>
+    <tr><td>Mistplay</td><td>ROAS</td><td>Loyalty app that rewards playtime and engagement. Now runs an audience network that includes MAF inventory.</td><td>US</td></tr>
+    <tr><td>KashKick</td><td>Fixed CPI</td><td>Pays users real money. US minimum CPI about $6 Android, $7 iOS. Suggested checkpoints on days 1, 3, 7, 12, 16, 22, 25, 30, 35, 40, 45.</td><td>US, then UK, DE</td></tr>
+    <tr><td>Freecash</td><td>CPI</td><td>Offerwall. Minimum CPI about $2. Wants around 10 events under 7 days, 10 between 7–14 days and 10 after 14 days.</td><td>Global offerwall</td></tr>
+    <tr><td>Gamelight</td><td>CPI</td><td>AI game-recommendation traffic, targets by age, genre and competitor titles. US CPI about $3 with about $200 daily budget.</td><td>US, UK, DE, FR, JP, KR</td></tr>
+    <tr><td>Benjamin</td><td>CPI</td><td>Cash-reward app with strong anti-fraud. US minimum CPI about $5.</td><td>US only</td></tr>
+    <tr><td>Scrambly</td><td>CPI</td><td>Identity checks (KYC) for user quality, small milestones.</td><td>US, GB, FR, DE</td></tr>
+    <tr><td>Zuck</td><td>CPE / fixed CPI</td><td>Fixed CPI about $6, placements on linked news platforms.</td><td>JP, also KR, TW</td></tr>
+    <tr><td>Tapjoy</td><td>CPE</td><td>Offerwall with multi-reward and daily-reward offers. Level achieved event required.</td><td>Offerwall inventory</td></tr>
+    <tr><td>Adjoe</td><td>Playtime / event</td><td>Rewards minutes played plus milestones. First event should convert at least 80%, final event 2–5%.</td><td>Playtime inventory</td></tr>
+    <tr><td>Prodege</td><td>CPI / CPE</td><td>Strong for IAP games. Milestones at levels that take about 1, 3–4, 7–8, 12–13, 17–18, 27–28, 38–45 and ~60 days.</td><td>US, then UK, AU, CA, DE, FR, ES</td></tr>
+  </tbody>
+</table>
+
+<h2>Before you launch</h2>
+<ul>
+  <li>Check each network's strongest countries and inventory type.</li>
+  <li>Ask the account manager for their recommended bid and reward structure.</li>
+  <li>Prefer networks with fraud protection or identity checks if you need high-quality traffic.</li>
+  <li>Compare cohorts against your other channels on retention and ROAS, not just CPI.</li>
+</ul>
+
+  </article>
+  <footer>
+    <div class="small"><span>Ho Chi Minh City, Vietnam</span><span>© 2026 Nguyễn Quốc Cường</span></div>
+  </footer>
+</main>
+<script src="../../knowledge.js"></script>
+</body>
+</html>

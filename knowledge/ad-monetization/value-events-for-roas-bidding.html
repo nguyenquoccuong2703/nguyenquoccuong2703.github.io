@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milestone and recurring value events for ROAS bidding — Nguyễn Quốc Cường</title>
+<meta name="description" content="Two ways to send revenue signals to ad networks so value-based campaigns find better users.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Milestone and recurring value events for ROAS bidding">
+<meta property="og:description" content="Two ways to send revenue signals to ad networks so value-based campaigns find better users.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="me" href="../../index.html">Nguyễn Quốc Cường</a>
+    <nav aria-label="Pages">
+      <a href="../../index.html#skills">Skills</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../knowledge.html" aria-current="page">Knowledge</a>
+      <a href="../../index.html#contact">Contact</a>
+      <a class="cv" href="../../cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="ktabs" aria-label="Knowledge topics">
+      <a href="../../knowledge.html">Overview</a>
+      <a href="../../knowledge-ad-monetization.html" aria-current="page">Ad Monetization</a>
+      <a href="../../knowledge-product.html">Product</a>
+      <a href="../../knowledge-game-design.html">Game Design</a>
+      <a href="../../knowledge-level-design.html">Level Design</a>
+      <a href="../../knowledge-user-acquisition.html">User Acquisition</a>
+  </nav>
+  <article class="prose">
+    <a class="back" href="../../knowledge-ad-monetization.html">Back to Ad Monetization</a>
+    <h1>Milestone and recurring value events for ROAS bidding</h1>
+    <p class="lede2">Two ways to send revenue signals to ad networks so value-based campaigns find better users.</p>
+
+<p>Value-based campaigns, such as target ROAS on Google Ads, only work as well as the revenue signal you send back. For ad-monetized games, revenue arrives in many tiny amounts, so how you package it into events matters. Two event types cover most needs.</p>
+
+<h2>Milestone events: find the valuable users</h2>
+<p>A milestone event fires the first time a user reaches a threshold, for example watching 20 rewarded ads, completing level 50, or reaching a lifetime value of $5.</p>
+<ol>
+  <li>Before the milestone, revenue is summed but nothing is sent.</li>
+  <li>When the user reaches it, send one event with the total revenue so far, then reset the counter.</li>
+  <li>After that, send an event every time this user generates revenue, with that revenue as the value.</li>
+</ol>
+<p>Because users who reach the milestone are your most valuable, sending every bit of their revenue teaches the network exactly what a high-value user looks like, which improves lookalike targeting.</p>
+
+<h2>Recurring events: a steady signal for everyone</h2>
+<p>A recurring event fires every time a user accumulates a fixed amount, for example every $1 of revenue, every 5 sessions or every 10 levels.</p>
+<ol>
+  <li>Revenue is summed since the last event.</li>
+  <li>When the step is reached, send one event with the summed value and reset.</li>
+  <li>Repeat at every step.</li>
+</ol>
+<p>This covers all users, including small spenders, without flooding the network with thousands of tiny events.</p>
+
+<h2>Which one to use</h2>
+<table>
+  <thead><tr><th>Goal</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>Find spenders and heavy ad watchers</td><td>Milestone</td></tr>
+    <tr><td>Deeper optimization and better lookalikes</td><td>Milestone</td></tr>
+    <tr><td>Data that covers every user</td><td>Recurring</td></tr>
+    <tr><td>A stable signal without event spam</td><td>Recurring</td></tr>
+  </tbody>
+</table>
+<p>Many games run both: milestones to track high-value users in depth and recurring events to track everyone broadly. Keep thresholds in remote config so UA and product can tune them without a new build, and make sure analytics knows which events are bidding signals so they do not distort other reports.</p>
+
+  </article>
+  <footer>
+    <div class="small"><span>Ho Chi Minh City, Vietnam</span><span>© 2026 Nguyễn Quốc Cường</span></div>
+  </footer>
+</main>
+<script src="../../knowledge.js"></script>
+</body>
+</html>
