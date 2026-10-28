@@ -76,6 +76,11 @@
   .game .nums span { font-size: 12px; color: var(--muted); }
   .game p { font-size: 13px; color: var(--muted); }
 
+  .habits { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .habit { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .habit b { display: block; font-family: "Space Grotesk"; font-size: 26px; color: var(--accent); margin-bottom: 4px; }
+  .habit h3 { font-size: 16px; margin-bottom: 6px; }
+  .habit p { color: var(--muted); font-size: 14px; }
   .edu { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .edu h3 { font-size: 18px; }
   .edu span { color: var(--muted); font-size: 14px; }
@@ -95,6 +100,7 @@
     <ul>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#player">Player</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -209,6 +215,16 @@
         <li>Ran playtests before and after updates; wrote design documentation</li>
       </ul>
     </article>
+  </section>
+
+  <section id="player">
+    <h2>Player first</h2>
+    <p class="sub">I love playing games, and I treat it as daily market research.</p>
+    <div class="habits">
+      <div class="habit"><b>1 / day</b><h3>A new casual game every day</h3><p>I try a newly released casual game each day and play until the first ad shows, studying the onboarding, early hooks and first-ad timing.</p></div>
+      <div class="habit"><b>Market</b><h3>Following the market</h3><p>I regularly read mobile game market news and trends to see what is working and why.</p></div>
+      <div class="habit"><b>Discovery</b><h3>Hunting for new games</h3><p>I actively search the stores and charts for new titles and mechanics worth learning from.</p></div>
+    </div>
   </section>
 
   <section>
