@@ -1,0 +1,11 @@
+{
+  "_how_to_use": "Upload any file into this knowledge folder and it appears on knowledge.html automatically. Optionally add an entry below to give it a nicer title, description, topic and date.",
+  "files": {
+    "example-file-name.pdf": {
+      "title": "Readable title shown on the page",
+      "description": "One line about what this file covers.",
+      "topic": "Monetization",
+      "date": "2026-10"
+    }
+  }
+}

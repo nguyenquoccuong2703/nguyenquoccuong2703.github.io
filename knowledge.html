@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge — Nguyễn Quốc Cường</title>
+<meta name="description" content="Notes, templates and analyses on mobile game product, design and monetization, shared by Nguyễn Quốc Cường.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Knowledge — Nguyễn Quốc Cường">
+<meta property="og:description" content="Notes, templates and analyses on mobile game product, design and monetization.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="me" href="index.html">Nguyễn Quốc Cường</a>
+    <nav aria-label="Pages">
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="knowledge.html" aria-current="page">Knowledge</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="cv" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Knowledge</h1>
+    <p>Notes, templates and analyses from my work on mobile game product, design and monetization. Free to read and reuse.</p>
+  </div>
+
+  <div class="filters" id="filters" role="group" aria-label="Filter by topic"></div>
+  <ul class="docs" id="docs" aria-live="polite"><li class="empty">Loading files…</li></ul>
+
+  <footer>
+    <div class="small"><span>Ho Chi Minh City, Vietnam</span><span>© 2026 Nguyễn Quốc Cường</span></div>
+  </footer>
+</main>
+
+<script>
+(async function () {
+  const REPO = 'nguyenquoccuong2703/nguyenquoccuong2703.github.io';
+  const DIR = 'knowledge';
+  const list = document.getElementById('docs');
+  const filtersEl = document.getElementById('filters');
+  const hidden = /^(index\.json|readme\.md|\.gitkeep)$/i;
+
+  function prettify(name) {
+    return name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim()
+      .replace(/^./, c => c.toUpperCase());
+  }
+  function size(bytes) {
+    if (bytes > 1e6) return (bytes / 1e6).toFixed(1) + ' MB';
+    return Math.max(1, Math.round(bytes / 1e3)) + ' KB';
+  }
+  function esc(t) { const d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+
+  let meta = {};
+  try { const r = await fetch(DIR + '/index.json', { cache: 'no-store' }); if (r.ok) meta = (await r.json()).files || {}; } catch (e) {}
+
+  let files = [];
+  try {
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${DIR}`);
+    if (!r.ok) throw new Error(r.status);
+    files = (await r.json()).filter(f => f.type === 'file' && !hidden.test(f.name));
+  } catch (e) {
+    files = Object.keys(meta).filter(n => n !== 'example-file-name.pdf').map(name => ({ name, size: 0 }));
+  }
+
+  const docs = files.map(f => {
+    const m = meta[f.name] || {};
+    const ext = (f.name.split('.').pop() || 'file').toUpperCase().slice(0, 4);
+    return { name: f.name, ext, size: f.size, title: m.title || prettify(f.name), desc: m.description || '', topic: m.topic || 'General', date: m.date || '' };
+  }).sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title));
+
+  if (!docs.length) {
+    list.innerHTML = '<li class="empty">New notes and templates are on the way. Check back soon.</li>';
+    return;
+  }
+
+  const topics = ['All', ...new Set(docs.map(d => d.topic))];
+  let active = 'All';
+  function render() {
+    list.innerHTML = docs.filter(d => active === 'All' || d.topic === active).map(d => `
+      <li class="doc">
+        <span class="type">${esc(d.ext)}</span>
+        <div>
+          <h2>${esc(d.title)}</h2>
+          <p>${[d.desc, d.topic, d.date, d.size ? size(d.size) : ''].filter(Boolean).map(esc).join(', ')}</p>
+        </div>
+        <a class="open-doc" href="${DIR}/${encodeURIComponent(d.name)}" target="_blank" rel="noopener">Open file</a>
+      </li>`).join('');
+  }
+  if (topics.length > 2) {
+    filtersEl.innerHTML = topics.map(t => `<button type="button" aria-pressed="${t === active}">${esc(t)}</button>`).join('');
+    filtersEl.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      active = b.textContent;
+      filtersEl.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      render();
+    });
+  }
+  render();
+})();
+</script>
+</body>
+</html>
