@@ -29,7 +29,9 @@
 
   /* Hero */
   .hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; padding: 88px 0 72px; }
-  .hero .role { font-weight: 600; color: var(--accent); margin-bottom: 16px; }
+  .hero .who { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .hero .avatar { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 3px solid var(--surface); box-shadow: 0 0 0 1px var(--line); }
+  .hero .role { font-weight: 600; color: var(--accent); }
   .hero h1 { font-size: clamp(44px, 7vw, 76px); font-weight: 800; margin-bottom: 24px; }
   .hero .lede { font-size: 19px; color: var(--muted); max-width: 34em; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
