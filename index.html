@@ -5,19 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nguyễn Quốc Cường — Product Owner</title>
 <meta name="description" content="Nguyễn Quốc Cường — Product Owner and game producer for casual puzzle mobile games.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nguyễn Quốc Cường — Product Owner">
+<meta property="og:description" content="Product Owner and game producer for casual puzzle mobile games. 7 live games, ~20M downloads.">
+<meta property="og:url" content="https://nguyenquoccuong2703.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232952e3'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f6f8fb; --surface: #ffffff; --ink: #14213d; --muted: #5b6478; --line: #dde2ec;
-    --accent: #2f5bea; --accent-ink: #ffffff; --tint: #e8eefd;
-    --t1: #f2b134; --t2: #e5484d; --t3: #2f5bea; --t4: #30a46c;
-    --tube: #e3e8f1;
+    --bg: #ffffff; --soft: #f4f6fa; --surface: #ffffff; --ink: #131c33; --muted: #566079; --line: #e2e6ee;
+    --accent: #2952e3; --accent-ink: #ffffff; --tint: #eaf0fe;
+    --panel: #131c33; --panel-ink: #f4f6fa; --panel-line: rgba(244,246,250,.16);
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #0e1626; --surface: #152036; --ink: #e8ecf4; --muted: #9aa4b8; --line: #24314a;
-            --accent: #7b97ff; --accent-ink: #0e1626; --tint: #1c2a47; --tube: #1d2a44; }
+    :root { --bg: #0d1424; --soft: #121b2e; --surface: #141e33; --ink: #e9edf5; --muted: #a0aac0; --line: #243049;
+            --accent: #7c98ff; --accent-ink: #0d1424; --tint: #1b2846;
+            --panel: #1a2540; --panel-ink: #e9edf5; --panel-line: rgba(233,237,245,.14); }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -45,26 +51,30 @@
   .hero .lede { font-size: 19px; color: var(--muted); max-width: 34em; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .btn { display: inline-block; padding: 13px 22px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 16px; border: 1px solid var(--line); background: var(--surface); }
-  .btn:hover { border-color: var(--ink); }
-  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.primary:hover { color: var(--accent-ink); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .btn.primary:hover { opacity: .9; }
   @media (max-width: 860px) { .hero { grid-template-columns: 1fr; gap: 40px; padding: 56px 0 48px; } }
 
-  /* Sort puzzle */
-  .board { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 32px 28px 22px; }
-  .tubes { position: relative; height: 236px; }
-  .tube { position: absolute; bottom: 0; width: 64px; height: 236px; border-radius: 0 0 32px 32px; background: var(--tube); }
-  .block { position: absolute; width: 52px; height: 50px; border-radius: 10px; transition: transform .55s cubic-bezier(.3,1.3,.5,1); }
-  .board-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; font-size: 14px; color: var(--muted); }
-  .board-foot button { font: inherit; font-weight: 600; color: var(--accent); background: none; border: 0; cursor: pointer; padding: 4px 0; }
-  @media (prefers-reduced-motion: reduce) { .block { transition: none; } }
+  /* At a glance */
+  .glance { background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 28px 28px 8px; }
+  .glance h2 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .glance dl { display: grid; grid-template-columns: 112px 1fr; }
+  .glance dt, .glance dd { padding: 14px 0; border-top: 1px solid var(--line); }
+  .glance dt { color: var(--muted); font-size: 15px; }
+  .glance dd { font-weight: 500; }
+  .glance .open { display: inline-flex; align-items: center; gap: 8px; }
+  .glance .open::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #30a46c; }
 
   /* Track record */
   .record { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .record div { padding: 28px 24px 28px 0; }
   .record div + div { padding-left: 24px; border-left: 1px solid var(--line); }
-  .record b { display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
-  .record span { color: var(--muted); font-size: 15px; }
+  .record b { display: block; color: var(--accent); font-family: "Bricolage Grotesque", sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .record b { white-space: nowrap; }
+  .record span { display: block; margin-top: 6px; color: var(--muted); font-size: 15px; line-height: 1.45; }
+  @media (max-width: 760px) { .record b { font-size: 30px; } .record div { padding-top: 22px; padding-bottom: 22px; } }
   @media (max-width: 760px) { .record { grid-template-columns: 1fr 1fr; } .record div:nth-child(3) { padding-left: 0; border-left: 0; } .record div:nth-child(n+3) { border-top: 1px solid var(--line); } }
 
   /* Sections */
@@ -82,11 +92,11 @@
   @media (max-width: 520px) { .skills { grid-template-columns: 1fr; } }
 
   /* AI */
-  .ai { background: var(--ink); color: var(--bg); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
+  .ai { background: var(--panel); color: var(--panel-ink); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
   .ai h2 { font-size: 36px; font-weight: 700; }
   .ai .intro { opacity: .75; margin-top: 12px; }
   .ai ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
-  .ai li { padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--bg) 18%, transparent); }
+  .ai li { padding: 14px 0; border-top: 1px solid var(--panel-line); }
   .ai li strong { display: block; font-weight: 600; }
   .ai li span { opacity: .72; font-size: 15px; }
   @media (max-width: 860px) { .ai { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; } .ai ul { grid-template-columns: 1fr; } }
@@ -158,13 +168,16 @@
       </div>
     </div>
 
-    <figure class="board" aria-label="A small color sort puzzle that solves itself">
-      <div class="tubes" id="tubes"></div>
-      <figcaption class="board-foot">
-        <span id="status">Sorting…</span>
-        <button type="button" id="shuffle">Shuffle again</button>
-      </figcaption>
-    </figure>
+    <aside class="glance" aria-labelledby="glance-title">
+      <h2 id="glance-title">At a glance</h2>
+      <dl>
+        <dt>Now</dt><dd>Producer at LIHUHU, running 7 live games</dd>
+        <dt>Focus</dt><dd>Casual puzzle, live ops, monetization</dd>
+        <dt>Publishers</dt><dd>Worked with Voodoo and Lion Studios</dd>
+        <dt>Based in</dt><dd>Ho Chi Minh City, Vietnam</dd>
+        <dt>Open to</dt><dd><span class="open">Product Owner roles</span></dd>
+      </dl>
+    </aside>
   </section>
 
   <div class="record">
@@ -339,59 +352,5 @@
 
 </main>
 
-<script>
-(function () {
-  const colors = ['var(--t1)', 'var(--t2)', 'var(--t3)', 'var(--t4)'];
-  const tubesEl = document.getElementById('tubes');
-  const status = document.getElementById('status');
-  const TUBES = 5, CAP = 4, BH = 50, GAP = 6, TW = 64;
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let blocks = [];
-
-  function layout() {
-    const w = tubesEl.clientWidth;
-    const step = (w - TW) / (TUBES - 1);
-    tubesEl.querySelectorAll('.tube').forEach((t, i) => t.style.left = (i * step) + 'px');
-    return step;
-  }
-  function place(b, tube, slot, step) {
-    const x = tube * step + (TW - 52) / 2;
-    const y = -(slot * (BH + GAP)) - 8;
-    b.el.style.transform = `translate(${x}px, ${236 - BH + y}px)`;
-  }
-  function build() {
-    tubesEl.innerHTML = '';
-    for (let i = 0; i < TUBES; i++) { const t = document.createElement('div'); t.className = 'tube'; tubesEl.appendChild(t); }
-    blocks = [];
-    const pool = [];
-    colors.forEach((c, ci) => { for (let k = 0; k < CAP; k++) pool.push(ci); });
-    for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
-    pool.forEach((ci, idx) => {
-      const el = document.createElement('div');
-      el.className = 'block'; el.style.background = colors[ci];
-      tubesEl.appendChild(el);
-      blocks.push({ el, color: ci, tube: Math.floor(idx / CAP), slot: idx % CAP });
-    });
-    const step = layout();
-    blocks.forEach(b => place(b, b.tube, b.slot, step));
-  }
-  function solve() {
-    status.textContent = 'Sorting…';
-    const step = layout();
-    const count = [0, 0, 0, 0];
-    const order = blocks.slice().sort((a, b) => a.color - b.color || a.slot - b.slot);
-    order.forEach((b, i) => {
-      const slot = count[b.color]++;
-      const go = () => place(b, b.color, slot, step);
-      reduce ? go() : setTimeout(go, 500 + i * 110);
-    });
-    setTimeout(() => status.textContent = 'Level complete', reduce ? 0 : 500 + order.length * 110 + 500);
-  }
-  function run() { build(); solve(); }
-  document.getElementById('shuffle').addEventListener('click', run);
-  addEventListener('resize', () => { const s = layout(); const count = [0,0,0,0]; blocks.slice().sort((a,b)=>a.color-b.color).forEach(b => place(b, b.color, count[b.color]++, s)); });
-  run();
-})();
-</script>
 </body>
 </html>
