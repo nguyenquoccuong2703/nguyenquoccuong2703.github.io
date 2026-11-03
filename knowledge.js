@@ -5,6 +5,7 @@
   const hidden = /^(index\.json|readme\.md|\.gitkeep)$/i;
   const esc = t => { const d = document.createElement('div'); d.textContent = t; return d.innerHTML; };
   const prettify = n => n.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/^./, c => c.toUpperCase());
+  const month = d => { if (!d) return ''; const [y, m] = d.split('-'); return m ? new Date(+y, +m - 1).toLocaleString('en', { month: 'short', year: 'numeric' }) : y; };
   const size = b => b > 1e6 ? (b / 1e6).toFixed(1) + ' MB' : Math.max(1, Math.round(b / 1e3)) + ' KB';
 
   async function load(folder) {
@@ -32,8 +33,8 @@
       if (!docs.length) { list.innerHTML = '<li class="empty">New files for this topic are on the way. Check back soon.</li>'; return; }
       list.innerHTML = docs.map(d => `
         <li class="doc">
-          <span class="type">${esc(d.ext)}</span>
-          <div><h2>${esc(d.title)}</h2><p>${[d.desc, d.date, d.size ? size(d.size) : ''].filter(Boolean).map(esc).join(', ')}</p></div>
+          <span class="type">${d.ext === 'HTML' ? 'READ' : esc(d.ext)}</span>
+          <div><h2>${esc(d.title)}</h2><p>${esc(d.desc)}</p><p class="meta">${[month(d.date), d.ext === 'HTML' ? '' : (d.size ? size(d.size) : '')].filter(Boolean).map(esc).join(', ')}</p></div>
           ${d.ext === 'HTML' ? `<a class="open-doc" href="${d.path}">Read article</a>` : `<a class="open-doc" href="${d.path}" target="_blank" rel="noopener">Open file</a>`}
         </li>`).join('');
     });
