@@ -252,3 +252,6 @@
   @media (prefers-reduced-motion: reduce) { .kb .kcard, .kb .doc, .kb .ktabs a { transition: none; } }
   .doc p.meta { font-size: 13px; margin-top: 4px; }
   .kb .doc p.meta { color: var(--muted); font-weight: 600; }
+
+  .edu .cert { display: inline-block; margin-top: 6px; color: var(--accent); font-weight: 600; font-size: 15px; text-decoration: none; }
+  .edu .cert:hover { text-decoration: underline; }
